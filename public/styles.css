@@ -1,10 +1,29 @@
 :root {
+    /* Light theme variables */
     --primary-color: #3b82f6;
     --secondary-color: #2563eb;
     --text-color: #1e293b;
     --bg-color: #ffffff;
     --nav-bg: rgba(255, 255, 255, 0.9);
     --shadow-color: rgba(0, 0, 0, 0.08);
+    --form-bg: white;
+    --form-border: #E2E8F0;
+    --hero-bg: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);
+    --contact-bg: #F8FAFC;
+}
+
+/* Dark theme variables */
+[data-theme="dark"] {
+    --primary-color: #60a5fa;
+    --secondary-color: #3b82f6;
+    --text-color: #e2e8f0;
+    --bg-color: #0f172a;
+    --nav-bg: rgba(15, 23, 42, 0.9);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --form-bg: #1e293b;
+    --form-border: #334155;
+    --hero-bg: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    --contact-bg: #1e293b;
 }
 
 * {
@@ -19,6 +38,7 @@ body {
     color: var(--text-color);
     background-color: var(--bg-color);
     padding-top: 4rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -47,7 +67,7 @@ body {
     z-index: 1000;
 }
 
-/* Navigation - Updated to be taller */
+/* Navigation */
 .nav-container {
     position: fixed;
     top: 1rem;
@@ -98,10 +118,32 @@ body {
     background: rgba(59, 130, 246, 0.1);
 }
 
+/* Theme Toggle Button */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 100px;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 8px;
+}
+
+.theme-toggle:hover {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--primary-color);
+}
+
 /* Hero Section */
 .hero {
     min-height: calc(100vh - 4rem);
-    background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);
+    background: var(--hero-bg);
     position: relative;
     overflow: hidden;
     padding: 4rem 0;
@@ -149,7 +191,7 @@ h1 {
 .subtitle {
     font-family: 'Georgia', serif;
     font-style: italic;
-    color: #4B5563;
+    color: var(--text-color);
     font-size: 1.5rem;
     line-height: 1.6;
     margin-bottom: 2rem;
@@ -183,17 +225,17 @@ h1 {
 
 /* Contact Section */
 .contact-section {
-    background: #F8FAFC;
+    background: var(--contact-bg);
     padding: 4rem 0;
 }
 
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
-    background: white;
+    background: var(--form-bg);
     padding: 2rem;
     border-radius: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px var(--shadow-color);
 }
 
 .form-group {
@@ -210,10 +252,12 @@ h1 {
 .form-input {
     width: 100%;
     padding: 0.75rem;
-    border: 2px solid #E2E8F0;
+    border: 2px solid var(--form-border);
     border-radius: 0.5rem;
     font-size: 1rem;
     transition: border-color 0.3s ease;
+    background: var(--form-bg);
+    color: var(--text-color);
 }
 
 .form-input:focus {
@@ -273,6 +317,25 @@ h1 {
     transform: translateY(-3px);
 }
 
+/* Dark Mode Specific Styles */
+[data-theme="dark"] .nav-item {
+    color: #94a3b8;
+}
+
+[data-theme="dark"] .nav-item:hover,
+[data-theme="dark"] .nav-item.active {
+    color: var(--primary-color);
+    background: rgba(96, 165, 250, 0.1);
+}
+
+[data-theme="dark"] .form-input::placeholder {
+    color: #64748b;
+}
+
+[data-theme="dark"] .hero::before {
+    opacity: 0.05;
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .nav-container {
@@ -296,25 +359,4 @@ h1 {
     }
 
     .datetime-display {
-        display: none;
-    }
-
-    .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 2rem;
-    }
-
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    .profile-image {
-        width: 250px;
-        height: 250px;
-    }
-
-    .contact-form {
-        padding: 1.5rem;
-    }
-}
+        display:
