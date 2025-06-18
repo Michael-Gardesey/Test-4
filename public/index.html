@@ -9,51 +9,39 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👋</text></svg>">
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Demo styles for location, highlight, etc. */
-        .location, .affiliations-list {
-            color: #2563eb; /* same as .highlight blue */
+        .location {
+            color: #334155;
             font-size: 1.1rem;
             font-weight: 500;
-            margin-bottom: 0.5em;
+            margin-bottom: 0.2em;
         }
-        .highlight {
-            color: #2563eb;
+        .affiliations {
+            color: #334155;
+            font-size: 1.1rem;
+            font-weight: 500;
+            font-style: italic;
+            margin-bottom: 0.7em;
         }
         .main-title {
-            color: #2563eb;
+            color: #2563eb; /* blue, like .highlight */
             font-size: 2.5rem;
             font-weight: bold;
             margin-bottom: 0.25em;
         }
         .bigger-intro {
-            font-size: 1.35rem;
-            color: #234;
-            font-weight: 500;
-            margin-bottom: 0.75em;
-            margin-top: 0.25em;
-        }
-        .affiliations-title {
-            font-weight: bold;
-            color: #2563eb;
-            font-size: 1.05rem;
-            display: inline;
-            margin-right: 0.25em;
-        }
-        .affiliations-list {
-            display: inline;
-            font-style: italic;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .affiliations-list li {
-            display: inline;
-            margin-right: 0.75em;
+            font-size: 1.25rem;
+            color: #1e293b;
+            font-weight: 600;
+            margin-bottom: 1em;
+            margin-top: 0.5em;
         }
         @media (max-width: 600px) {
             .main-title { font-size: 1.5rem; }
-            .bigger-intro { font-size: 1.1rem; }
-            .location, .affiliations-list { font-size: 1rem; }
+            .bigger-intro { font-size: 1.05rem; }
+            .location, .affiliations { font-size: 1rem; }
+        }
+        .highlight {
+            color: #2563eb;
         }
     </style>
 </head>
@@ -80,16 +68,9 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-
                     <div class="location">Tarkwa-Nsuaem Municipal District, Western Region, Ghana</div>
-                    <div>
-                        <span class="affiliations-title">Affiliations:</span>
-                        <ul class="affiliations-list">
-                            <li>mGhIE</li>
-                            <li>mPAX</li>
-                        </ul>
-                    </div>
-                    <h1 class="main-title">
+                    <div class="affiliations">Affiliations: mGhIE, mPAX</div>
+                    <h1 class="main-title highlight">
                         Graduate Minerals Engineer
                     </h1>
                     <div class="bigger-intro">
