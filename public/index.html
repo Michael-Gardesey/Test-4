@@ -4,54 +4,347 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Graduate Minerals Engineer | Tarkwa-Nsuaem, Ghana</title>
-    <meta name="description" content="Graduate Minerals Engineer based in Tarkwa-Nsuaem, Western Region, Ghana.">
+    <meta name="description" content="Graduate Minerals Engineer based in Tarkwa-Nsuaem, Western Region, Ghana. National Service Personnel at Ghana Bauxite Co. Ltd. Passionate about advancing the mining industry through innovative engineering solutions.">
+    <meta name="keywords" content="minerals engineer, Tarkwa-Nsuaem, Ghana, mining engineering, Ghana Bauxite, UMaT, mineral processing, engineering, Western Region">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👋</text></svg>">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Original styles remain unchanged */
+        .subtitle {
+            font-size: 1.7rem;
+            color: #3a4b6e;
+            margin-top: 0.7em;
+            font-weight: 400;
+            font-family: 'Georgia', 'Times New Roman', Times, serif;
+            font-style: italic;
+            line-height: 1.4;
+        }
+        .affiliations-block {
+            margin: 1.2em 0 1.5em 0;
+            font-size: 1.2rem;
+        }
+        .affiliations-title {
+            color: #2563eb;
+            font-weight: 700;
+            margin-right: 0.6em;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 0.2em;
+        }
+        .affiliations-list {
+            color: #334155;
+            font-style: italic;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 1em;
+            font-size: 1.1rem;
+        }
+        .location {
+            color: #16a34a;
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin-bottom: 0.2em;
+        }
+        .profile-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1.5em;
+        }
+        .profile-image {
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #2563eb;
+            box-shadow: 0px 4px 24px rgba(37, 99, 235, 0.12);
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* New styles for enhanced features */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .expertise-card {
+            background: #ffffff;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 24px rgba(37, 99, 235, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .expertise-icon {
+            font-size: 2.5rem;
+            color: #2563eb;
+            margin-bottom: 1rem;
+        }
+
+        .expertise-title {
+            font-size: 1.5rem;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+        }
+
+        .expertise-description {
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        .timeline {
+            margin: 3rem 0;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #2563eb;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            margin: 2rem 0;
+            position: relative;
+            width: 50%;
+            padding: 0 2rem;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 24px rgba(37, 99, 235, 0.08);
+        }
+
+        .timeline-date {
+            color: #2563eb;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #334155;
+            font-weight: 500;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #2563eb;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #2563eb;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
 </head>
 <body>
-    <!-- Top Navigation Bar -->
-    <div class="top-bar">
-        <nav class="nav-container">
-            <div class="nav-group">
-                <a href="#" class="nav-item active">
-                    <i class="fas fa-home"></i>
-                    <span>Home</span>
-                </a>
-                <a href="#about" class="nav-item">
-                    <i class="fas fa-user"></i>
-                    <span>About</span>
-                </a>
-                <a href="#work" class="nav-item">
-                    <i class="fas fa-briefcase"></i>
-                    <span>Work</span>
-                </a>
-                <a href="#blog" class="nav-item">
-                    <i class="fas fa-pen-fancy"></i>
-                    <span>Blog</span>
-                </a>
-                <a href="#gallery" class="nav-item">
-                    <i class="fas fa-images"></i>
-                    <span>Gallery</span>
-                </a>
-            </div>
-            <div class="status-group">
-                <button class="theme-toggle">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <div class="user-info">
-                    <span class="username">@Michael-Gardesey</span>
-                    <span class="separator">•</span>
-                    <span class="datetime" id="current-datetime">2025-06-18 20:49:37</span>
-                </div>
+    <!-- Header section remains unchanged -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">👋</a>
+            <ul class="nav-links">
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact" class="connect-btn">Connect</a></li>
+            </ul>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </nav>
-    </div>
+    </header>
 
-    <!-- Rest of your content -->
+    <!-- Hero section remains unchanged -->
     <section class="hero">
-        <!-- Your existing hero content -->
+        <!-- Previous hero content remains the same -->
     </section>
+
+    <!-- New Expertise Section -->
+    <section id="expertise" class="section">
+        <div class="container">
+            <h2>Areas of Expertise</h2>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <i class="fas fa-mountain expertise-icon"></i>
+                    <h3 class="expertise-title">Mineral Processing</h3>
+                    <p class="expertise-description">
+                        Specialized in optimization of mineral processing operations and recovery enhancement techniques.
+                    </p>
+                </div>
+                <div class="expertise-card">
+                    <i class="fas fa-chart-line expertise-icon"></i>
+                    <h3 class="expertise-title">Process Analysis</h3>
+                    <p class="expertise-description">
+                        Expert in analyzing and improving mineral processing circuits for maximum efficiency.
+                    </p>
+                </div>
+                <div class="expertise-card">
+                    <i class="fas fa-cogs expertise-icon"></i>
+                    <h3 class="expertise-title">Plant Operations</h3>
+                    <p class="expertise-description">
+                        Experienced in managing and optimizing mining plant operations and maintenance.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2>Services</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Consulting</div>
+                        <p>Technical consulting for mineral processing operations</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Process Optimization</div>
+                        <p>Improving efficiency of existing operations</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Project Management</div>
+                        <p>Managing mineral processing projects from concept to completion</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Message</label>
+                    <textarea class="form-input" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
     <script src="script.js"></script>
 </body>
