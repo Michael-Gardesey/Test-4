@@ -1,65 +1,349 @@
-// Keep your existing code and add these new functions
-
-// Theme switching functionality
-function initTheme() {
-    // Check for saved theme preference, default to 'light'
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(savedTheme);
+:root {
+    /* Light theme variables */
+    --primary-color: #3b82f6;
+    --secondary-color: #2563eb;
+    --text-color: #1e293b;
+    --bg-color: #ffffff;
+    --nav-bg: rgba(255, 255, 255, 0.9);
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --form-bg: white;
+    --form-border: #E2E8F0;
+    --hero-bg: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);
+    --contact-bg: #F8FAFC;
 }
 
-function updateThemeIcon(theme) {
-    const icon = document.querySelector('.theme-toggle i');
-    if (icon) {
-        icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-    }
+/* Dark theme variables */
+[data-theme="dark"] {
+    --primary-color: #60a5fa;
+    --secondary-color: #3b82f6;
+    --text-color: #e2e8f0;
+    --bg-color: #0f172a;
+    --nav-bg: rgba(15, 23, 42, 0.9);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --form-bg: #1e293b;
+    --form-border: #334155;
+    --hero-bg: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    --contact-bg: #1e293b;
 }
 
-function toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    padding-top: 4rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* DateTime and User Display */
+.datetime-display {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: var(--nav-bg);
+    padding: 0 16px;
+    border-radius: 100px;
+    font-size: 14px;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px var(--shadow-color);
+    height: 32px;
+    line-height: 32px;
+    z-index: 1000;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding-left: 12px;
+    border-left: 1px solid var(--form-border);
+}
+
+/* Navigation */
+.nav-container {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    height: 48px;
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 100px;
+    box-shadow: 0 2px 10px var(--shadow-color);
+    padding: 0 24px;
+}
+
+.nav-items {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 16px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    color: #64748b;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    height: 100%;
+    line-height: 48px;
+    transition: all 0.3s ease;
+    border-radius: 100px;
+}
+
+.nav-item i {
+    font-size: 16px;
+    margin-right: 8px;
+}
+
+.nav-item:hover {
+    color: var(--primary-color);
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.nav-item.active {
+    color: var(--primary-color);
+    background: rgba(59, 130, 246, 0.1);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 100px;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 8px;
+}
+
+.theme-toggle:hover {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    min-height: calc(100vh - 4rem);
+    background: var(--hero-bg);
+    position: relative;
+    overflow: hidden;
+    padding: 4rem 0;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(var(--primary-color) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.1;
+    animation: moveBackground 15s linear infinite;
+}
+
+@keyframes moveBackground {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50px); }
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.location {
+    color: #22C55E;
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-size: 4rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.subtitle {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.highlight {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* Profile Image */
+.profile-container {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 4px solid var(--primary-color);
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Contact Section */
+.contact-section {
+    background: var(--contact-bg);
+    padding: 4rem 0;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--form-bg);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--form-border);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background: var(--form-bg);
+    color: var(--text-color);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 100px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.btn-primary {
+    background: #1E293B;
+    color: white;
+}
+
+.btn-secondary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.social-link {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+}
+
+/* Dark Mode Specific Styles */
+[data-theme="dark"] .nav-item {
+    color: #94a3b8;
+}
+
+[data-theme="dark"] .nav-item:hover,
+[data-theme="dark"] .nav-item.active {
+    color: var(--primary-color);
+    background: rgba(96, 165, 250, 0.1);
+}
+
+[data-theme="dark"] .form-input::placeholder {
+    color: #64748b;
+}
+
+[data-theme="dark"] .hero::before {
+    opacity: 0.05;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
     
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateThemeIcon(newTheme);
-}
-
-// Add event listener for theme toggle
-document.addEventListener('DOMContentLoaded', () => {
-    initTheme();
-    
-    const themeToggle = document.querySelector('.theme-toggle');
-    if (themeToggle) {
-        themeToggle.addEventListener('click', toggleTheme);
-    }
-});
-
-// Keep your existing datetime and navigation code below
-function updateDateTime() {
-    const now = new Date();
-    const formatted = now.toISOString().replace('T', ' ').substring(0, 19) + ' UTC';
-    document.getElementById('current-datetime').textContent = formatted;
-}
-
-setInterval(updateDateTime, 1000);
-updateDateTime();
-
-const navItems = document.querySelectorAll('.nav-item');
-navItems.forEach(item => {
-    item.addEventListener('click', () => {
-        navItems.forEach(i => i.classList.remove('active'));
-        item.classList.add('active');
-    });
-});
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    });
-});
