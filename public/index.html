@@ -4,79 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Graduate Minerals Engineer | Tarkwa-Nsuaem, Ghana</title>
-    <meta name="description" content="Graduate Minerals Engineer based in Tarkwa-Nsuaem, Western Region, Ghana. National Service Personnel at Ghana Bauxite Co. Ltd. Passionate about advancing the mining industry through innovative engineering solutions.">
-    <meta name="keywords" content="minerals engineer, Tarkwa-Nsuaem, Ghana, mining engineering, Ghana Bauxite, UMaT, mineral processing, engineering, Western Region">
+    <meta name="description" content="Graduate Minerals Engineer based in Tarkwa-Nsuaem, Western Region, Ghana. National Service Personnel at Ghana Bauxite Co. Ltd.">
+    <meta name="keywords" content="minerals engineer, Tarkwa-Nsuaem, Ghana, mining engineering, Ghana Bauxite, UMaT">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👋</text></svg>">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .subtitle {
-            font-size: 1.7rem;
-            color: #3a4b6e;
-            margin-top: 0.7em;
-            font-weight: 400;
-            font-family: 'Georgia', 'Times New Roman', Times, serif;
-            font-style: italic;
-            line-height: 1.4;
-        }
-        .affiliations-block {
-            margin: 1.2em 0 1.5em 0;
-            font-size: 1.2rem;
-        }
-        .affiliations-title {
-            color: #2563eb;
-            font-weight: 700;
-            margin-right: 0.6em;
-            font-size: 1.2rem;
-            display: block;
-            margin-bottom: 0.2em;
-        }
-        .affiliations-list {
-            color: #334155;
-            font-style: italic;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 1em;
-            font-size: 1.1rem;
-        }
-        .location {
-            color: #16a34a;
-            font-size: 1.15rem;
-            font-weight: 500;
-            margin-bottom: 0.2em;
-        }
-        .profile-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 1.5em;
-        }
-        .profile-image {
-            width: 260px;
-            height: 260px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 4px solid #2563eb;
-            box-shadow: 0px 4px 24px rgba(37, 99, 235, 0.12);
-            background: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .profile-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loading">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress"></div>
+
+    <!-- Theme Toggle (will be inserted via JS) -->
+    <div id="theme-toggle-wrapper"></div>
+
     <header>
         <nav class="container">
             <a href="#" class="logo">👋</a>
             <ul class="nav-links">
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
@@ -96,11 +46,10 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <div class="location">Tarkwa-Nsuaem Municipal District, Western Region, Ghana</div>
-                    <h1 style="color: #2563eb !important;">
-                        Graduate Minerals Engineer
-                    </h1>
+                    <h1>Graduate Minerals Engineer</h1>
                     <p class="subtitle">
-                        I am currently serving as National Service Personnel at <span class="highlight">Ghana Bauxite Co. Ltd</span>.<br>
+                        I am currently serving as National Service Personnel at 
+                        <span class="highlight">Ghana Bauxite Co. Ltd</span>.<br>
                         Alumni, <span class="highlight">University of Mines and Technology, Tarkwa</span>
                     </p>
                     <div class="affiliations-block">
@@ -111,12 +60,8 @@
                         </ul>
                     </div>
                     <div class="cta-buttons">
-                        <a href="#portfolio" class="btn btn-primary">
-                            See my work
-                        </a>
-                        <a href="#contact" class="btn btn-secondary">
-                            Start a project
-                        </a>
+                        <a href="#portfolio" class="btn btn-primary">See my work</a>
+                        <a href="#contact" class="btn btn-secondary">Start a project</a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -128,42 +73,86 @@
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator">
-            Scroll to explore ↓
+        <div class="scroll-indicator">Scroll to explore ↓</div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2>Professional Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card" data-skill-level="90">
+                    <i class="fas fa-mountain"></i>
+                    <h3>Mineral Processing</h3>
+                    <p>Expert in mineral separation and processing techniques</p>
+                    <div class="skill-bar">
+                        <div class="skill-level"></div>
+                    </div>
+                </div>
+                <div class="skill-card" data-skill-level="85">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Process Optimization</h3>
+                    <p>Experienced in improving operational efficiency</p>
+                    <div class="skill-bar">
+                        <div class="skill-level"></div>
+                    </div>
+                </div>
+                <div class="skill-card" data-skill-level="88">
+                    <i class="fas fa-microscope"></i>
+                    <h3>Material Analysis</h3>
+                    <p>Proficient in mineral characterization methods</p>
+                    <div class="skill-bar">
+                        <div class="skill-level"></div>
+                    </div>
+                </div>
+                <div class="skill-card" data-skill-level="82">
+                    <i class="fas fa-hard-hat"></i>
+                    <h3>Mining Operations</h3>
+                    <p>Strong background in mining methodologies</p>
+                    <div class="skill-bar">
+                        <div class="skill-level"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Placeholder sections for future content -->
+    <!-- Existing sections -->
     <section id="services" class="section">
         <div class="container">
             <h2>Services</h2>
             <p>Coming soon...</p>
         </div>
     </section>
+
     <section id="portfolio" class="section">
         <div class="container">
             <h2>Portfolio</h2>
             <p>Coming soon...</p>
         </div>
     </section>
+
     <section id="testimonials" class="section">
         <div class="container">
             <h2>Testimonials</h2>
             <p>Coming soon...</p>
         </div>
     </section>
+
     <section id="blog" class="section">
         <div class="container">
             <h2>Blog</h2>
             <p>Coming soon...</p>
         </div>
     </section>
+
     <section id="contact" class="section">
         <div class="container">
             <h2>Contact</h2>
             <p>Coming soon...</p>
         </div>
     </section>
+
     <script src="script.js"></script>
 </body>
 </html>
