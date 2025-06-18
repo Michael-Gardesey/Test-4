@@ -1,94 +1,50 @@
-// Existing smooth scrolling functionality
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+// Add this to your existing script.js
+
+// Navigation active state
+const navItems = document.querySelectorAll('.nav-item');
+
+navItems.forEach(item => {
+    item.addEventListener('click', () => {
+        navItems.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
     });
 });
 
-// Enhanced mobile menu functionality
-const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-const navLinks = document.querySelector('.nav-links');
+// Theme toggle functionality
+const themeToggle = document.querySelector('.theme-toggle');
+const body = document.body;
 
-if (mobileMenuToggle && navLinks) {
-    mobileMenuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        mobileMenuToggle.classList.toggle('active');
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!navLinks.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-            navLinks.classList.remove('active');
-            mobileMenuToggle.classList.remove('active');
-        }
-    });
-}
-
-// Back to top button functionality
-const backToTop = document.querySelector('.back-to-top');
-if (backToTop) {
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            backToTop.classList.add('visible');
-        } else {
-            backToTop.classList.remove('visible');
-        }
-    });
-}
-
-// Expertise cards animation
-const expertiseCards = document.querySelectorAll('.expertise-card');
-const observerOptions = {
-    threshold: 0.2,
-    rootMargin: '0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
-        }
-    });
-}, observerOptions);
-
-expertiseCards.forEach(card => observer.observe(card));
-
-// Form submission handling
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const submitButton = contactForm.querySelector('button[type="submit"]');
-        submitButton.disabled = true;
-        submitButton.textContent = 'Sending...';
-
-        // Simulate form submission
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        
-        alert('Message sent successfully!');
-        contactForm.reset();
-        submitButton.disabled = false;
-        submitButton.textContent = 'Send Message';
-    });
-}
-
-// Timeline animation
-const timelineItems = document.querySelectorAll('.timeline-item');
-const timelineObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
-        }
-    });
-}, {
-    threshold: 0.2
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-theme');
+    const icon = themeToggle.querySelector('i');
+    if (body.classList.contains('dark-theme')) {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+    } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+    }
 });
 
-timelineItems.forEach(item => timelineObserver.observe(item));
+// Optional: Scroll behavior
+let lastScroll = 0;
+const nav = document.querySelector('.nav-container');
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll <= 0) {
+        nav.style.transform = 'translateX(-50%)';
+        return;
+    }
+    
+    if (currentScroll > lastScroll) {
+        // Scrolling down
+        nav.style.transform = 'translate(-50%, 100%)';
+    } else {
+        // Scrolling up
+        nav.style.transform = 'translateX(-50%)';
+    }
+    
+    lastScroll = currentScroll;
+});
