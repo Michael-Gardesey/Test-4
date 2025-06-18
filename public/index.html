@@ -9,24 +9,45 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👋</text></svg>">
     <link rel="stylesheet" href="styles.css">
     <style>
-        .subtitle {
-            font-size: 1.15rem;
-            color: #3a4b6e;
+        .location {
+            color: #334155;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.2em;
+        }
+        .affiliations-inline {
+            margin-bottom: 0.7em;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        .affiliations-inline .affil-label {
+            color: #2563eb;
+            font-weight: bold;
+        }
+        .affiliations-inline .affil-list {
+            color: #334155;
+            font-style: italic;
+        }
+        .main-title {
+            color: #2563eb;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.25em;
+        }
+        .bigger-intro {
+            font-size: 1.25rem;
+            color: #1e293b;
+            font-weight: 600;
+            margin-bottom: 1em;
             margin-top: 0.5em;
         }
-        .affiliations-title {
-            font-size: 1rem;
-            color: #3a4b6e;
-            font-weight: 600;
-            margin-top: 1em;
+        @media (max-width: 600px) {
+            .main-title { font-size: 1.5rem; }
+            .bigger-intro { font-size: 1.05rem; }
+            .location, .affiliations-inline { font-size: 1rem; }
         }
-        .affiliations-list {
-            font-size: 1rem;
-            color: #3a4b6e;
-            font-style: italic;
-            list-style: none;
-            padding-left: 0;
-            margin: 0.25em 0 1em 0;
+        .highlight {
+            color: #2563eb;
         }
     </style>
 </head>
@@ -53,20 +74,19 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <div class="location">Tarkwa-Nsuaem Municipal District, Western Region, Ghana</div>
-                    <h1 style="color: #2563eb;">
+                    <div class="location">
+                        Tarkwa-Nsuaem Municipal District, Western Region, Ghana
+                    </div>
+                    <div class="affiliations-inline">
+                        <span class="affil-label">Affiliations:</span>
+                        <span class="affil-list"> mGhIE, mPAX</span>
+                    </div>
+                    <h1 class="main-title">
                         Graduate Minerals Engineer
                     </h1>
-                    <p class="subtitle">
+                    <div class="bigger-intro">
                         I am currently serving as National Service Personnel at <span class="highlight">Ghana Bauxite Co. Ltd</span>.<br>
                         Alumni, <span class="highlight">University of Mines and Technology, Tarkwa</span>
-                    </p>
-                    <div class="affiliations">
-                        <div class="affiliations-title">Affiliations:</div>
-                        <ul class="affiliations-list">
-                            <li>mGhIE</li>
-                            <li>mPAX</li>
-                        </ul>
                     </div>
                     <div class="cta-buttons">
                         <a href="#portfolio" class="btn btn-primary">
