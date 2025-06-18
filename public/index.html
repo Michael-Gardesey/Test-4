@@ -9,24 +9,51 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👋</text></svg>">
     <link rel="stylesheet" href="styles.css">
     <style>
-        .subtitle {
-            font-size: 1.15rem;
-            color: #3a4b6e;
-            margin-top: 0.5em;
+        /* Demo styles for location, highlight, etc. */
+        .location, .affiliations-list {
+            color: #2563eb; /* same as .highlight blue */
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.5em;
+        }
+        .highlight {
+            color: #2563eb;
+        }
+        .main-title {
+            color: #2563eb;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.25em;
+        }
+        .bigger-intro {
+            font-size: 1.35rem;
+            color: #234;
+            font-weight: 500;
+            margin-bottom: 0.75em;
+            margin-top: 0.25em;
         }
         .affiliations-title {
-            font-size: 1rem;
-            color: #3a4b6e;
-            font-weight: 600;
-            margin-top: 1em;
+            font-weight: bold;
+            color: #2563eb;
+            font-size: 1.05rem;
+            display: inline;
+            margin-right: 0.25em;
         }
         .affiliations-list {
-            font-size: 1rem;
-            color: #3a4b6e;
+            display: inline;
             font-style: italic;
             list-style: none;
-            padding-left: 0;
-            margin: 0.25em 0 1em 0;
+            padding: 0;
+            margin: 0;
+        }
+        .affiliations-list li {
+            display: inline;
+            margin-right: 0.75em;
+        }
+        @media (max-width: 600px) {
+            .main-title { font-size: 1.5rem; }
+            .bigger-intro { font-size: 1.1rem; }
+            .location, .affiliations-list { font-size: 1rem; }
         }
     </style>
 </head>
@@ -53,20 +80,21 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
+
                     <div class="location">Tarkwa-Nsuaem Municipal District, Western Region, Ghana</div>
-                    <h1>
-                        Graduate Minerals Engineer
-                    </h1>
-                    <p class="subtitle">
-                        I am currently serving as National Service Personnel at <span class="highlight">Ghana Bauxite Co. Ltd</span>.<br>
-                        Alumni, <span class="highlight">University of Mines and Technology, Tarkwa</span>
-                    </p>
-                    <div class="affiliations">
-                        <div class="affiliations-title">Affiliations:</div>
+                    <div>
+                        <span class="affiliations-title">Affiliations:</span>
                         <ul class="affiliations-list">
                             <li>mGhIE</li>
                             <li>mPAX</li>
                         </ul>
+                    </div>
+                    <h1 class="main-title">
+                        Graduate Minerals Engineer
+                    </h1>
+                    <div class="bigger-intro">
+                        I am currently serving as National Service Personnel at <span class="highlight">Ghana Bauxite Co. Ltd</span>.<br>
+                        Alumni, <span class="highlight">University of Mines and Technology, Tarkwa</span>
                     </div>
                     <div class="cta-buttons">
                         <a href="#portfolio" class="btn btn-primary">
