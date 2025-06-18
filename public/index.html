@@ -10,23 +10,32 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         .subtitle {
-            font-size: 1.15rem;
+            font-size: 1.25rem;
             color: #3a4b6e;
-            margin-top: 0.5em;
+            margin-top: 0.7em;
+            font-weight: 600;
+        }
+        .affiliations-row {
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            margin: 1em 0 1.2em 0;
         }
         .affiliations-title {
+            color: #2563eb;
+            font-weight: 700;
+            margin-right: 0.6em;
             font-size: 1rem;
-            color: #3a4b6e;
-            font-weight: 600;
-            margin-top: 1em;
+            /* Blue, bold, and not too large */
         }
         .affiliations-list {
-            font-size: 1rem;
-            color: #3a4b6e;
+            color: #334155;
             font-style: italic;
+            display: flex;
+            gap: 0.7em;
             list-style: none;
-            padding-left: 0;
-            margin: 0.25em 0 1em 0;
+            margin: 0;
+            padding: 0;
         }
         .location {
             color: #334155;
@@ -60,20 +69,20 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <div class="location">Tarkwa-Nsuaem Municipal District, Western Region, Ghana</div>
-                    <h1 style="color: #2563eb;">
+                    <h1 style="color: #2563eb !important;">
                         Graduate Minerals Engineer
                     </h1>
-                    <p class="subtitle">
-                        I am currently serving as National Service Personnel at <span class="highlight">Ghana Bauxite Co. Ltd</span>.<br>
-                        Alumni, <span class="highlight">University of Mines and Technology, Tarkwa</span>
-                    </p>
-                    <div class="affiliations">
-                        <div class="affiliations-title">Affiliations:</div>
+                    <div class="affiliations-row">
+                        <span class="affiliations-title">Affiliations:</span>
                         <ul class="affiliations-list">
                             <li>mGhIE</li>
                             <li>mPAX</li>
                         </ul>
                     </div>
+                    <p class="subtitle">
+                        I am currently serving as National Service Personnel at <span class="highlight">Ghana Bauxite Co. Ltd</span>.<br>
+                        Alumni, <span class="highlight">University of Mines and Technology, Tarkwa</span>
+                    </p>
                     <div class="cta-buttons">
                         <a href="#portfolio" class="btn btn-primary">
                             See my work
